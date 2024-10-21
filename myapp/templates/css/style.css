@@ -1,0 +1,17 @@
+.contenedor1 {
+    width: 300px;
+    height: 200px;
+    background-color: lightblue;
+    position: relative; /* O absolute si es necesario */
+    z-index: 1; /* Este estará debajo */
+}
+
+.contenedor2 {
+    width: 200px;
+    height: 100px;
+    background-color: coral;
+    position: absolute; /* O relative, según tu estructura */
+    top: 50px; /* Ajusta la posición vertical */
+    left: 50px; /* Ajusta la posición horizontal */
+    z-index: 2; /* Este estará sobre el primero */
+}

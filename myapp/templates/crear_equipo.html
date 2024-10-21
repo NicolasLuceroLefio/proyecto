@@ -1,0 +1,19 @@
+<!-- myapp/templates/crear_equipo.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Equipo</title>
+</head>
+<body>
+    <h1>Crear Equipo</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Crear Equipo</button>
+    </form>
+    <br>
+    <a href="{% url 'index' %}">Volver a la página principal</a>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Empleado</title>
+</head>
+<body>
+    <h1>Agregar Empleado</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Agregar Empleado</button>
+    </form>
+
+    <a name=""  id="" class="btn btn-success" href="{%  url 'index' %}" role="button">Inicio</a> 
+
+    <h2>Lista de Empleados</h2>
+    <ul>
+        {% for empleado in empleados %}
+            <li>{{ empleado.nombre }} - {{ empleado.correo }} - {{ empleado.cargo }}</li>
+        {% empty %}
+            <li>No hay empleados registrados.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

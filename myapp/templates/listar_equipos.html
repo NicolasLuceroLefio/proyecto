@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Equipos</title>
+</head>
+<body>
+    <h1>Lista de Equipos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for equipo in equipos %}
+            <tr>
+                <td>{{ equipo.id }}</td>
+                <td>{{ equipo.nombre }}</td>
+                <td>
+                    <a href="{% url 'eliminar_equipo' equipo.id %}">Eliminar</a>
+                    <!-- Aquí podrías agregar más acciones, como editar -->
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3">No hay equipos disponibles.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'crear_equipo' %}">Crear Nuevo Equipo</a> <!-- O la URL de tu opción para crear -->
+</body>
+</html>

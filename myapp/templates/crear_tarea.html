@@ -1,0 +1,18 @@
+<!-- myapp/templates/crear_tarea.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Tarea para el Proyecto: {{ proyecto.nombre }}</title>
+</head>
+<body>
+    <h1>Crear Tarea para el Proyecto: {{ proyecto.nombre }}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Crear Tarea</button>
+    </form>
+    <a href="{% url 'editar_proyectos' %}">Volver a la lista de proyectos</a>
+</body>
+</html>
+

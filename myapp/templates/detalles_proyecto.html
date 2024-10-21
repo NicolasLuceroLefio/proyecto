@@ -1,0 +1,26 @@
+<h1>Detalles del Proyecto: {{ proyecto.nombre }}</h1>
+
+<h2>Equipo Asignado</h2>
+<p>{{ equipo.nombre }}</p>
+<h3>Miembros:</h3>
+<ul>
+    {% for miembro in equipo.miembros.all %}
+        <li>{{ miembro.nombre }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Tareas del Proyecto</h2>
+<ul>
+    {% for tarea in tareas %}
+        <li>
+            <strong>{{ tarea.descripcion }}</strong> - Estado: {{ tarea.estado }}
+            <ul>
+                <li>Responsable: {{ tarea.responsable.nombre }}</li>
+                <li>Ejecutor: {{ tarea.ejecutor.nombre }}</li>
+                <li>Duración: {{ tarea.duracion }} horas</li>
+            </ul>
+        </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'editar_proyectos' %}">Volver a la lista de proyectos</a>

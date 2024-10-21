@@ -1,0 +1,14 @@
+<h1>Proyectos</h1>
+<form method="POST">
+    {% csrf_token %}
+    <ul>
+        {% for proyecto in proyectos %}
+        <li>
+            <input type="radio" name="proyecto_seleccionado" value="{{ proyecto.id }}">
+            {{ proyecto.nombre }} - {{ proyecto.descripcion }}
+        </li>
+        {% endfor %}
+    </ul>
+    <button type="submit">Seleccionar proyecto y crear tarea</button>
+    <a href="{% url 'detalles_proyecto' proyecto.id %}">Ver detalles del proyecto</a>  <!-- Botón para ver detalles -->
+</form>
